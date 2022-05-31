@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	on, off := true, true
-	_ = off
+	on, _ := true, true
+
 	fmt.Println(on)
 }
