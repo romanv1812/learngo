@@ -2,14 +2,23 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"strings"
+
+	"github.com/romanv1812/learngo/learngo/Example/weight"
 )
 
 func main() {
-	msg := os.Args[1]
-	l := len(msg)
-	s := strings.Repeat("!", l) + msg + strings.Repeat("!", l)
-	s = strings.ToUpper(s)
-	fmt.Println(s)
+	type (
+		Gram     int
+		Kilogram Gram
+		Ton      Kilogram
+	)
+
+	var (
+		salt   Gram     = 100
+		apples Kilogram = 5
+		truck  Ton      = 10
+	)
+	fmt.Printf("Salt %d,Apples %d, Tuck %d \n", salt, apples, truck)
+	salt = Gram(weight.Gram(100))
+	fmt.Printf("Type of weight.Gram: %T \n", weight.Gram(1))
 }
