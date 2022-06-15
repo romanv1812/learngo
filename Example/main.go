@@ -2,20 +2,22 @@ package main
 
 import (
 	"fmt"
+	"math"
+	"os"
+	"strconv"
 )
 
 func main() {
-	const meters int = 100
-
-	cm := 100
-	m := cm / meters
-	fmt.Printf("%dcm is %dm\n", cm, m)
-	cm = 200
-	m = cm / meters
-	fmt.Printf("%dcm is %dm\n", cm, m)
-
 	const (
-		total, number0f int = 5, 1
+		feetInMetrs float64 = 0.3048
+		feetInYards         = feetInMetrs / 0.9144
 	)
-	fmt.Println(total / number0f)
+
+	arg := os.Args[1]
+	feet, _ := strconv.ParseFloat(arg, 64)
+	meters := feet * feetInMetrs
+	yards := math.Round(feet * feetInYards)
+	fmt.Printf("%g feet is %g metrs\n", feet, meters)
+	fmt.Printf("%g feet is %g yards \n", feet, yards)
+
 }
