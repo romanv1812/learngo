@@ -26,5 +26,5 @@ func main() {
 		minsPerDay = 60 * 24
 		weekDays   = 7
 	)
-	fmt.Printf("There are %d minutes in 2 weeks.\n", minsPerDay*weekDays*2)
+	fmt.Printf("There are %d minutes in %d weeks.\n", minsPerDay*weekDays*2, 2)
 }
