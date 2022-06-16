@@ -1,14 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	const (
-		EST = -(5 + iota)
-		_
-		MST
-		PST
-	)
-	fmt.Println(EST, MST, PST)
+	color := "red"
+	fmt.Println("reddish color?", color == "red" || color == "dark-red")
 
 }
